@@ -30,6 +30,9 @@ jobs:
        run: |
          docker build \
            -t $ACR_NAME.azurecr.io/z_automobile_backend:${{ github.sha }} .
+     - name: Login to ACR
+       run: |
+         az acr login --name $ACR_NAME
      - name: Push Image
        run: |
          docker push \
