@@ -10,7 +10,7 @@ permissions:
 jobs:
   build_and_deploy:
     name: build_job
-    runs-on: zautomobileapp
+    runs-on: self-hosted
     steps:
      - name: checkout
        uses: actions/checkout@v4
