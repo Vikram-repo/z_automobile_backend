@@ -23,5 +23,16 @@ jobs:
      - name: Check Azure Login
        run: |
          az account show
-    
+     - name: Build Image
+       run: |
+         docker build \
+           -t $ACR_NAME.azurecr.io/z_automobile_backend:${{ github.sha }} .
+     - name: Push Image
+       run: |
+         docker push \
+           $ACR_NAME.azurecr.io/z_automobile_backend:${{ github.sha }}
+
+
+
+   
 
